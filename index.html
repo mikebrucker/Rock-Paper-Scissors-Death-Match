@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+    
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body onresize="heightContainer()">
+    
+    <div id="header">Rock Paper Scissors Death Match</div>
+    <div id="nav"></div>
+    <div class="container">
+        <div class="text" onclick="begin()">Begin</div>
+
+        
+        <div id="content">
+
+            <div id="choose">
+                <div id="addEndGame">
+                    <div class="text">Choose Your Weapon</div>
+                    <div class="block"></div>
+                    <div id="chooseModal">
+                        <div class="images" onclick="rock()">
+                            <img id="rock" src="images/rock.png" />
+                        </div>
+                        <div class="images" onclick="paper()">
+                            <img id="paper" src="images/paper.png" />
+                        </div>
+                        <div class="images" onclick="scissors()">
+                            <img id="scissors" src="images/scissors.png" />
+                        </div>
+                    </div>
+                    <div class="block"></div>
+                    <div id="closeModal" class="text" onclick='quit()'>End Game</div>
+                </div>
+            </div>
+            <div id="player"><img src="images/characters/tree.gif" /></div>
+            
+            <div id="playerWeapon"></div>
+            
+            <div id="computerWeapon"></div>
+
+            <div id="computer"><img src="images/characters/crabmecha.gif"></div>
+
+        </div>
+
+    </div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

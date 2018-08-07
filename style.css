@@ -1,0 +1,116 @@
+body {
+    max-width: 900px;
+    background-image: url('images/backgrounds/metaldesign_background_texture.jpg');
+    color: maroon;
+    font-family: fantasy;
+    font-weight: bold;
+    font-size: 56px;
+}
+
+body, #header, .text, #addEndGame {
+    background-position: center;
+    background-color: rgb(60, 60, 60);
+    overflow: hidden;
+}
+
+body, #choose {
+    text-align: center;
+}
+
+.text, #closeModal, #choose, body {
+    margin: 0 auto;
+}
+
+.block {
+    display: block;
+}
+
+.text, #addEndGame, #chooseModal, #closeModal, .images {
+    display: inline-block;
+}
+
+#header, .text, #closeModal, #addEndGame {
+    border: 6px ridge dimgray;
+    border-radius: 4px;
+}
+
+#addEndGame > .text {
+    margin: 20px auto 0;
+}
+
+#header, .text { 
+    padding: 26px 10px 16px;
+    background-image: url('images/backgrounds/metalscratched_background_texture.jpg');
+}
+
+#choose {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+#addEndGame {
+    background-image: url('images/backgrounds/metalgrate_background_texture.jpg');
+    background-size: 90%;
+    margin: 110px auto 0px;
+    overflow: visible;
+}
+
+#chooseModal {
+    position: relative;
+    font-size: 40px;
+}
+
+#closeModal {
+    font-size: 30px;
+}
+
+.images {
+    background: radial-gradient(maroon, rgb(128, 0, 0, 0.5), rgb(128, 0, 0, 0), rgb(128, 0, 0, 0));
+}
+
+.images > img {
+    margin: 10px;
+    padding: 25px;
+    max-width: 150px;
+}
+
+#player, #computer, #playerWeapon, #computerWeapon {
+    position: fixed;
+}
+
+#playerWeapon > img , #computerWeapon > img {
+    max-width: 200px;
+}
+
+#playerWeapon {
+    left: 400px;
+}
+
+#computerWeapon {
+    right: 400px;
+}
+
+#player {
+    left: 0%;
+}
+
+#computer {
+    right: 0%;
+}
+
+@media all and (min-width: 481px) and (max-width: 768px) {
+    body {
+        max-width: 720px;
+    }
+}
+
+@media all and (max-width: 480px) {
+    body {
+        max-width: 440px;
+    }
+}
