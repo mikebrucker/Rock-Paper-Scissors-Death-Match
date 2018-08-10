@@ -25,13 +25,13 @@
                     <div class="text">Choose Your Weapon</div>
                     <div class="block"></div>
                     <div id="chooseModal">
-                        <div class="images" onclick="rock()">
+                        <div class="images" onclick="rockPick()">
                             <img id="rock" src="images/rock.png" />
                         </div>
-                        <div class="images" onclick="paper()">
+                        <div class="images" onclick="paperPick()">
                             <img id="paper" src="images/paper.png" />
                         </div>
-                        <div class="images" onclick="scissors()">
+                        <div class="images" onclick="scissorsPick()">
                             <img id="scissors" src="images/scissors.png" />
                         </div>
                     </div>
@@ -46,6 +46,14 @@
             <div id="computerWeapon"></div>
 
             <div id="computer"><img src="images/characters/crabmecha.gif"></div>
+            <div id="matchInfo"></div>
+            <div id="scoreboard">
+                <div class="twofive"></div>
+                <div class="matchInfo" id="pWins"> Wins:</div>
+                <div class="matchInfo" id="cWins"> Losses:</div>
+                <div class="matchInfo" id="tiess"> Ties:</div>
+                <div class="twofive"></div>
+            </div>
 
         </div>
 
