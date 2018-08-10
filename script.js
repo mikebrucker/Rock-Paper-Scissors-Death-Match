@@ -15,15 +15,10 @@ var pWins = document.querySelector('#pWins');
 var cWins = document.querySelector('#cWins');
 var tiess = document.querySelector('#tiess');
 
-function choose() { 
-    choose.style = 'display: block';
-    document.querySelector('#modalContent').innerHTML = 'asdf'
-}
-
 function closeModal() {
     choose.style.opacity = 0;
     choose.style.transition = 'opacity 1.5s';
-    window.setTimeout(closeTransition, 2001);
+    window.setTimeout(closeTransition, 1501);
 }
 
 function closeTransition() {
@@ -63,6 +58,7 @@ function scissorsPick() {
 function begin() {
     playerWeapon.innerHTML = '';
     computerWeapon.innerHTML = '';
+    matchInfo.style = 'display: none';
     choose.style = 'display: block';
     var resetImages = document.querySelectorAll('.images img');
     for(var i = 0; i < resetImages.length; i++) {
@@ -78,15 +74,25 @@ function quit() {
 }
 
 function battleFadeIn() { 
+    playerWeapon.style = 'display: none'; 
+    computerWeapon.style = 'display: none'; 
+    matchInfo.style = 'display: none'; 
+    playerWeapon.style = 'display: block'; 
+    computerWeapon.style = 'display: block'; 
+    matchInfo.style = 'display: block'; 
     playerWeapon.style.opacity = 0;
     computerWeapon.style.opacity = 0;
-    setTimeout(battleFadeIn2, 1501);
+    matchInfo.style.opacity = 0;
+    setTimeout(battleFadeIn2, 1600);
 }
+
 function battleFadeIn2() {
     playerWeapon.style.opacity = 1;
     computerWeapon.style.opacity = 1;
-    playerWeapon.style.transition = 'opacity 2s';
-    computerWeapon.style.transition = 'opacity 2s';
+    matchInfo.style.opacity = 1;
+    playerWeapon.style.transition = 'opacity 1s';
+    computerWeapon.style.transition = 'opacity 1s';
+    matchInfo.style.transition = 'opacity 1s';
 }
 
 document.addEventListener('keypress', function (event) {
@@ -112,85 +118,67 @@ function checkInput(input, computerChoice) {
     if (input === "quit") {
         return false;
     } else if ((computerChoice === "rock") && (input === "scissors")) {
+        battleFadeIn();
         playerWeapon.innerHTML = '<img src="images/scissors.png" />'
         computerWeapon.innerHTML = '<img src="images/rock.png" />'
-        playerWeapon.style.opacity = 0;
-        computerWeapon.style.opacity = 0;
-        battleFadeIn();
-        computerWins++;
         matchInfo.innerHTML = 'Match ' + match + ': Scissors vs Rock, Computer Wins';
+        setTimeout(function(){computerWins++}, 2400);
         return true;
     } else if ((computerChoice === "scissors") && (input === "paper")) {
+        battleFadeIn();
         playerWeapon.innerHTML = '<img src="images/paper.png" />'
         computerWeapon.innerHTML = '<img src="images/scissors.png" />'
-        playerWeapon.style.opacity = 0;
-        computerWeapon.style.opacity = 0;
-        battleFadeIn();
-        computerWins++;
         matchInfo.innerHTML = 'Match ' + match + ': Paper vs Scissors, Computer Wins';
+        setTimeout(function(){computerWins++}, 2400);        
         return true;
     } else if ((computerChoice === "paper") && (input === "rock")) {
+        battleFadeIn();
         playerWeapon.innerHTML = '<img src="images/rock.png" />'
         computerWeapon.innerHTML = '<img src="images/paper.png" />'
-        playerWeapon.style.opacity = 0;
-        computerWeapon.style.opacity = 0;
-        battleFadeIn();
-        computerWins++;
         matchInfo.innerHTML = 'Match ' + match + ': Rock vs Paper, Computer Wins';
+        setTimeout(function(){computerWins++}, 2400);        
         return true;
     } else if ((computerChoice === "paper") && (input === "scissors")) {
+        battleFadeIn();
         playerWeapon.innerHTML = '<img src="images/scissors.png" />'
         computerWeapon.innerHTML = '<img src="images/paper.png" />'
-        playerWeapon.style.opacity = 0;
-        computerWeapon.style.opacity = 0;
-        battleFadeIn();
-        playerWins++;
         matchInfo.innerHTML = 'Match ' + match + ': Scissors vs Paper, Player 1 Wins';
+        setTimeout(function(){playerWins++}, 2400);        
         return true;
     } else if ((computerChoice === "scissors") && (input === "rock")) {
+        battleFadeIn();
         playerWeapon.innerHTML = '<img src="images/rock.png" />'
         computerWeapon.innerHTML = '<img src="images/scissors.png" />'
-        playerWeapon.style.opacity = 0;
-        computerWeapon.style.opacity = 0;
-        battleFadeIn();
-        playerWins++;
         matchInfo.innerHTML = 'Match ' + match + ': Rock vs Scissors, Player 1 Wins';
+        setTimeout(function(){playerWins++}, 2400);        
         return true;
     } else if ((computerChoice === "rock") && (input === "paper")) {
-        playerWeapon.style.opacity = 0;
-        computerWeapon.style.opacity = 0;
+        battleFadeIn();
         playerWeapon.innerHTML = '<img src="images/paper.png" />'
         computerWeapon.innerHTML = '<img src="images/rock.png" />'
-        battleFadeIn();
-        playerWins++;
         matchInfo.innerHTML = 'Match ' + match + ': Paper vs Rock, Player 1 Wins';
+        setTimeout(function(){playerWins++}, 2400);        
         return true;
     } else if ((computerChoice === "paper") && (input === "paper")) {
+        battleFadeIn();
         playerWeapon.innerHTML = '<img src="images/paper.png" />'
         computerWeapon.innerHTML = '<img src="images/paper.png" />'
-        playerWeapon.style.opacity = 0;
-        computerWeapon.style.opacity = 0;
-        battleFadeIn();
-        ties++;
         matchInfo.innerHTML = 'Match ' + match + ': Both Used Paper';
+        setTimeout(function(){ties++;}, 2400);
         return true;
     } else if ((computerChoice === "scissors") && (input === "scissors")) {
+        battleFadeIn();
         playerWeapon.innerHTML = '<img src="images/scissors.png" />'
         computerWeapon.innerHTML = '<img src="images/scissors.png" />'
-        playerWeapon.style.opacity = 0;
-        computerWeapon.style.opacity = 0;
-        battleFadeIn();
-        ties++;
         matchInfo.innerHTML = 'Match ' + match + ': Both Used Scissors';
+        setTimeout(function(){ties++;}, 2400);        
         return true;
     } else if ((computerChoice === "rock") && (input === "rock")) {
+        battleFadeIn();
         playerWeapon.innerHTML = '<img src="images/rock.png" />'
         computerWeapon.innerHTML = '<img src="images/rock.png" />'
-        playerWeapon.style.opacity = 0;
-        computerWeapon.style.opacity = 0;
-        battleFadeIn();
-        ties++;
         matchInfo.innerHTML = 'Match ' + match + ': Both Used Rock';
+        setTimeout(function(){ties++;}, 2400);        
         return true;
     } 
 }
@@ -201,9 +189,10 @@ function start() {
     computerChoice = randomFrom(computerChoices);
     if (computerChoices.includes(playerInput)) {
         gameOver = checkInput(playerInput, computerChoice);
-        pWins.innerHTML = ' Wins: ' + playerWins;
-        cWins.innerHTML = ' Losses: ' + computerWins;
-        tiess.innerHTML = ' Ties: ' + ties;
+        setTimeout(function() {
+        pWins.innerHTML = '&nbsp;&nbsp;Wins: ' + playerWins;
+        cWins.innerHTML = '&nbsp;&nbsp;Losses: ' + computerWins;
+        tiess.innerHTML = '&nbsp;&nbsp;Ties: ' + ties;}, 2500);
         match++;
     } else if (playerInput === 'quit') {
         gameOver = checkInput(playerInput, computerChoice);

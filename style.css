@@ -97,11 +97,15 @@ body, #choose {
 }
 
 #playerWeapon > img , #computerWeapon > img {
-    max-width: 200px;
+    max-width: 245px;
 }
 
 #playerWeapon {
     left: 400px;
+}
+
+#playerWeapon, #computerWeapon {
+z-index: 10;
 }
 
 #computerWeapon {
@@ -126,14 +130,14 @@ body, #choose {
 }
 
 .twofive {
-    width: 12.4%;
+    width: 12.5%;
     height: 1px;
 }
 
 .matchInfo {
     width: 25%;
     text-align: left;
-    padding: 26px 10px 16px;
+    padding: 26px 0px 16px;
 }
 
 #matchInfo {
