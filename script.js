@@ -115,9 +115,7 @@ function randomFrom(array) {
 }
 
 function checkInput(input, computerChoice) {
-    if (input === "quit") {
-        return false;
-    } else if ((computerChoice === "rock") && (input === "scissors")) {
+    if ((computerChoice === "rock") && (input === "scissors")) {
         battleFadeIn();
         playerWeapon.innerHTML = '<img src="images/scissors.png" />'
         computerWeapon.innerHTML = '<img src="images/rock.png" />'
@@ -207,6 +205,9 @@ function start() {
         playerWins = 0;
         computerWins = 0;
         ties = 0;
+            pWins.innerHTML = '&nbsp;&nbsp;Wins: ' + playerWins;
+            cWins.innerHTML = '&nbsp;&nbsp;Losses: ' + computerWins;
+            tiess.innerHTML = '&nbsp;&nbsp;Ties: ' + ties;
     } 
 } 
 
